@@ -1,6 +1,7 @@
 package io.github.mklkj.ump220bug
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         if (!adsHelper.canShowAd) {
             adsHelper.openAdsUmpAgreements()
+        }
+
+        findViewById<Button>(R.id.button).setOnClickListener {
+            recreate()
         }
 
         lifecycleScope.launch {

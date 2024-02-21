@@ -32,12 +32,10 @@ class AdsHelper(
     val canShowAd get() = isMobileAdsSdkInitialized.value && canRequestAd
 
     init {
-//        if (preferencesRepository.isAdsEnabled) {
         initialize()
-//        }
     }
 
-    fun initialize() {
+    private fun initialize() {
         val consentRequestParameters = ConsentRequestParameters.Builder()
             .build()
 
